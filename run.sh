@@ -11,7 +11,7 @@ then
 else
  echo "different!"
  mv now.png old.png
- time=$(date +Month%mDay%dTime%H:%m)
+ time=$(date +Month%mDay%dTime%H:%M)
  cat index_template.html | sed -e "s/TIME/$time/g" > index.html
  git commit -am "update at $time"
  git push
