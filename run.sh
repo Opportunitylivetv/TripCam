@@ -10,4 +10,8 @@ then
  echo "not much changed, abort"
 else
  echo "different!"
+ mv now.png old.png
+ time=$(date +Month%mDay%dTime%H:%m)
+ git commit -am "update at $time"
+ git push
 fi
