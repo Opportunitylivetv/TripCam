@@ -13,7 +13,7 @@ else
  time=$(date +Month%mDay%dTime%H:%M)
  num="$(( ( RANDOM % 10 )  + 1 ))"
  picname=$(echo "${num}_pic.png")
- mv now.png $picname
+ cp now.png $picname
  rm difference.png
  git add $picname
  cat index_template.html | sed -e "s/TIME/$time/g" | sed -e "s/PIC/$picname/g" > index.html
