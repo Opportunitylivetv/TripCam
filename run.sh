@@ -14,6 +14,7 @@ else
  num="$(( ( RANDOM % 10 )  + 1 ))"
  picname=$(echo "${num}_pic.png")
  mv now.png $picname
+ rm difference.png
  git add $picname
  cat index_template.html | sed -e "s/TIME/$time/g" | sed -e "s/PIC/$picname/g" > index.html
  git commit -am "update at $time"
