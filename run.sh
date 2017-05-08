@@ -11,8 +11,10 @@ then
 else
  echo "different!"
  time=$(date +Month%mDay%dTime%H:%M)
- picname=$(echo "${RANDOM}_pic.png")
+ num="$(( ( RANDOM % 10 )  + 1 ))"
+ picname=$(echo "${num}_pic.png")
  mv now.png $picname
+ git add $picname
  cat index_template.html | sed -e "s/TIME/$time/g" | sed -e "s/PIC/$picname/g" > index.html
  git commit -am "update at $time"
  git push
