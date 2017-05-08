@@ -14,6 +14,7 @@ else
  num="$(( ( RANDOM % 10 )  + 1 ))"
  picname=$(echo "${num}_pic.png")
  cp now.png $picname
+ cp now.png ~/Desktop/trip_pics/$RANDOM.png
  rm difference.png
  git add $picname
  cat index_template.html | sed -e "s/TIME/$time/g" | sed -e "s/PIC/$picname/g" > index.html
