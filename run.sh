@@ -19,5 +19,5 @@ else
  git add $picname
  cat index_template.html | sed -e "s/TIME/$time/g" | sed -e "s/PIC/$picname/g" > index.html
  git commit -am "update at $time"
- git push
+ git push --force
 fi
